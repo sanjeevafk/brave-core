@@ -1,7 +1,16 @@
 diff --git a/chrome/browser/extensions/api/identity/identity_get_auth_token_function.h b/chrome/browser/extensions/api/identity/identity_get_auth_token_function.h
-index 523d893998efa31a1c72db2db53a1183cf03b2e6..dbdb5c3ff9da6b1aebdbe77548bee48cf404612c 100644
+index 523d893998efa31a1c72db2db53a1183cf03b2e6..5b260071b12371488103a606bda35b962e6a6b3c 100644
 --- a/chrome/browser/extensions/api/identity/identity_get_auth_token_function.h
 +++ b/chrome/browser/extensions/api/identity/identity_get_auth_token_function.h
+@@ -85,7 +85,7 @@ class IdentityGetAuthTokenFunction : public ExtensionFunction,
+ 
+   IdentityGetAuthTokenFunction();
+ 
+-#if BUILDFLAG(ENABLE_DESKTOP_ANDROID_EXTENSIONS)
++#if BUILDFLAG(IS_ANDROID) && BUILDFLAG(ENABLE_EXTENSIONS_CORE)
+   // Overrides how long the function waits for the Gaia cookies to be updated
+   // before giving up and failing the request. Restores the default value on
+   // destruction. Must not be nested.
 @@ -161,7 +161,7 @@ class IdentityGetAuthTokenFunction : public ExtensionFunction,
    FRIEND_TEST_ALL_PREFIXES(GetAuthTokenFunctionTest, NoninteractiveShutdown);
  
