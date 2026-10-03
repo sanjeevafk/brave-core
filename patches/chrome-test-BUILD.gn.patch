@@ -1,5 +1,5 @@
 diff --git a/chrome/test/BUILD.gn b/chrome/test/BUILD.gn
-index a24120b4afa56b6c15f09d576dbb086a06668598..6f8c3f3797b1bece162254c3c904b45ff996e5e6 100644
+index eb18074f70836e05661a9fc1ff01b3a0a98f7f31..6a54c03c0f1e35e3968d8d46622070e133fcb371 100644
 --- a/chrome/test/BUILD.gn
 +++ b/chrome/test/BUILD.gn
 @@ -2,6 +2,7 @@
@@ -18,7 +18,7 @@ index a24120b4afa56b6c15f09d576dbb086a06668598..6f8c3f3797b1bece162254c3c904b45f
  
    if (is_android || is_mac || is_win || is_chromeos) {
      deps += [
-@@ -186,6 +188,7 @@ static_library("test_support") {
+@@ -191,6 +193,7 @@ static_library("test_support") {
    }
  
    sources = [ "../app/startup_timestamps.h" ]
@@ -26,7 +26,7 @@ index a24120b4afa56b6c15f09d576dbb086a06668598..6f8c3f3797b1bece162254c3c904b45f
  
    if (enable_guest_view) {
      public_deps += [ "//components/guest_view/browser:test_support" ]
-@@ -5412,6 +5415,7 @@ test("unit_tests") {
+@@ -5312,6 +5315,7 @@ test("unit_tests") {
      "//ui/webui",
      "//v8",
    ]
@@ -34,7 +34,7 @@ index a24120b4afa56b6c15f09d576dbb086a06668598..6f8c3f3797b1bece162254c3c904b45f
  
    if (enable_devtools_frontend) {
      deps += [ "//chrome/browser/ui/webui/devtools:unit_tests" ]
-@@ -7947,6 +7951,7 @@ if (!is_android && !is_chromeos_device) {
+@@ -7767,6 +7771,7 @@ if (!is_android && !is_chromeos_device) {
      deps = [
        ":test_support",
        ":test_support_ui",

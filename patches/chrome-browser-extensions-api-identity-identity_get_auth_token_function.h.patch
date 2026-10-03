@@ -1,8 +1,8 @@
 diff --git a/chrome/browser/extensions/api/identity/identity_get_auth_token_function.h b/chrome/browser/extensions/api/identity/identity_get_auth_token_function.h
-index dec2563796d2b79c248c5dc5ee49c2b4333befa3..8698d467e8c05667dfaa6681a53897721d00940e 100644
+index 523d893998efa31a1c72db2db53a1183cf03b2e6..dbdb5c3ff9da6b1aebdbe77548bee48cf404612c 100644
 --- a/chrome/browser/extensions/api/identity/identity_get_auth_token_function.h
 +++ b/chrome/browser/extensions/api/identity/identity_get_auth_token_function.h
-@@ -146,7 +146,7 @@ class IdentityGetAuthTokenFunction : public ExtensionFunction,
+@@ -161,7 +161,7 @@ class IdentityGetAuthTokenFunction : public ExtensionFunction,
    FRIEND_TEST_ALL_PREFIXES(GetAuthTokenFunctionTest, NoninteractiveShutdown);
  
    class RefreshTokensLoadedWaiter;
@@ -11,7 +11,7 @@ index dec2563796d2b79c248c5dc5ee49c2b4333befa3..8698d467e8c05667dfaa6681a5389772
    class AccountsInCookieUpdatedWaiter;
  #endif
    enum class InteractionType { kSignin, kConsent };
-@@ -159,7 +159,7 @@ class IdentityGetAuthTokenFunction : public ExtensionFunction,
+@@ -174,7 +174,7 @@ class IdentityGetAuthTokenFunction : public ExtensionFunction,
    // might be started.
    void GetAuthTokenForAccount(const GaiaId& gaia_id);
  
@@ -20,7 +20,7 @@ index dec2563796d2b79c248c5dc5ee49c2b4333befa3..8698d467e8c05667dfaa6681a5389772
    void OnCookiesUpdatedForRemoteConsent(bool success);
    bool ShouldDelayRemoteConsent();
    void StartWaitingForCookies();
-@@ -272,7 +272,7 @@ class IdentityGetAuthTokenFunction : public ExtensionFunction,
+@@ -293,7 +293,7 @@ class IdentityGetAuthTokenFunction : public ExtensionFunction,
    // a permissions prompt will be popped up to the user.
    RemoteConsentResolutionData resolution_data_;
    std::unique_ptr<RefreshTokensLoadedWaiter> refresh_tokens_loaded_waiter_;
