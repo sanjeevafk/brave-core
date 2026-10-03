@@ -1,5 +1,5 @@
 diff --git a/chrome/common/BUILD.gn b/chrome/common/BUILD.gn
-index a48c4c66e5834a29a467b0187078c4b241358975..14481a270d845b98aa54218d279ce30a7f2bc371 100644
+index a48c4c66e5834a29a467b0187078c4b241358975..1129c54e323f10af1513f14d77fd828b69841777 100644
 --- a/chrome/common/BUILD.gn
 +++ b/chrome/common/BUILD.gn
 @@ -2,6 +2,7 @@
@@ -58,3 +58,10 @@ index a48c4c66e5834a29a467b0187078c4b241358975..14481a270d845b98aa54218d279ce30a
  
    if (is_android) {
      sources += [ "chrome_paths_android.cc" ]
+@@ -908,5 +915,6 @@ source_set("unit_tests") {
+   if (enable_widevine && is_linux) {
+     sources += [ "media/cdm_registration_unittest.cc" ]
+     data_deps = [ "//third_party/widevine/cdm" ]
++    deps += [ "//third_party/widevine/cdm:headers" ]
+   }
+ }
