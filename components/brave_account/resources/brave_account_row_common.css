@@ -56,6 +56,22 @@
   }
 }
 
+.first-row.clickable {
+  cursor: pointer;
+
+  &:hover {
+    background: var(--leo-color-container-highlight);
+  }
+
+  .description {
+    text-wrap-mode: nowrap;
+  }
+
+  > leo-icon:last-child {
+    color: var(--leo-color-icon-default);
+  }
+}
+
 .second-row {
   align-items: flex-start;
   border-top: 1px solid var(--leo-color-divider-subtle);
