@@ -1,0 +1,14 @@
+diff --git a/chrome/installer/linux/common/postinst.include b/chrome/installer/linux/common/postinst.include
+index d237a1affe90b120b76e28539f526f0e2645af09..321a45a801ae3608487cd992fc46b34414aae605 100644
+--- a/chrome/installer/linux/common/postinst.include
++++ b/chrome/installer/linux/common/postinst.include
+@@ -107,8 +107,7 @@ chrome_management_service_setup
+ if [ -f "@@INSTALLDIR/apparmor.d/@@usr_bin_symlink_name" ]; then
+   if [ -f "/etc/apparmor.d/abi/4.0" ] && [ -x /sbin/apparmor_parser ]; then
+     # Check for exact attachment collision with Ubuntu's native chrome profile.
+-    if [ "@@usr_bin_symlink_name" = "google-chrome-stable" ] && \
+-       [ -f "/etc/apparmor.d/chrome" ]; then
++    if [ -f "/etc/apparmor.d/brave" ]; then
+       # Skip installation if a conflicting profile exists.
+       true
+     else
